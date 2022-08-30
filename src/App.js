@@ -1,11 +1,7 @@
-import "./App.css";
+import "./styles/App.css";
 
 function App() {
-  return (
-    <div>
-      <h1>Random Quote Machine</h1>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
