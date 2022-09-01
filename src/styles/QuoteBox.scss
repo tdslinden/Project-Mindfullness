@@ -3,6 +3,7 @@
 //     font-size: 5rem;
 //   }
 // }
+$fade-in: fadeIn 1s;
 
 #quote-box {
   background-color: white;
@@ -20,12 +21,32 @@
   padding-bottom: 2rem;
 }
 
+#text[fade="1"] {
+  animation: $fade-in;
+}
+
 .author-container {
   display: flex;
   justify-content: flex-end;
-  font-weight: 300;
-  font-size: 1.125rem;
-  color: #2a9d8f;
+
+  #author {
+    font-weight: 300;
+    font-size: 1.125rem;
+    color: #2a9d8f;
+  }
+
+  #author[fade="1"] {
+    animation: $fade-in;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .buttons {
