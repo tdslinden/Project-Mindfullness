@@ -12,6 +12,7 @@ $fade-in: fadeIn 1s;
   width: auto;
   height: auto;
   padding: 3rem;
+  border-radius: 0.5rem;
 }
 
 .quote-container {
@@ -36,8 +37,8 @@ $fade-in: fadeIn 1s;
 
 #alert {
   background: rgba($color: #c1c1c1, $alpha: 0.3);
-  border-radius: 3px;
-  padding: 2px 7px;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
 }
 
 #text {
