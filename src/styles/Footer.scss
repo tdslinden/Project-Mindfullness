@@ -1,0 +1,30 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  width: 75%;
+}
+
+#icon {
+  margin-right: 4px;
+  padding: 1.25rem 1.125rem;
+  font-size: 1.25rem;
+  color: rgba($color: #ffffff, $alpha: 0.6);
+}
+
+#tag {
+  margin-right: 4px;
+  font-size: 0.875rem;
+  padding: 1.25rem 1.125rem;
+  color: rgba($color: #ffffff, $alpha: 0.6);
+}
