@@ -15,7 +15,10 @@ const QuoteBox = () => {
 
   const getQuote = () => {
     const randomNumber = getRandomNumber();
-    return quotes[randomNumber];
+
+    let quoteData = quotes[randomNumber];
+    setQuote(quoteData["quote"]);
+    setAuthor(quoteData["author"]);
   };
 
   useEffect(() => {
@@ -36,19 +39,24 @@ const QuoteBox = () => {
   }, []);
 
   useEffect(() => {
-    let quoteData = getQuote();
-    console.log(quoteData);
-    if (quoteData) {
-      setQuote(quoteData["quote"]);
-      setAuthor(quoteData["author"]);
+    if (quotes.length > 0) {
+      setFade(1);
+      getQuote();
     }
   }, [quotes]);
 
   return (
     <div id="quote-box">
-      <p id="text" onAnimationEnd={() => setFade(0)} fade={fade}>
-        "{quote}"
-      </p>
+      <div
+        className="quote-container"
+        onClick={() => {
+          navigator.clipboard.writeText(quote);
+        }}
+      >
+        <p id="text" onAnimationEnd={() => setFade(0)} fade={fade}>
+          {quote ? '"' + quote + '"' : ""}
+        </p>
+      </div>
 
       <div className="author-container">
         <p id="author" fade={fade}>
@@ -58,14 +66,16 @@ const QuoteBox = () => {
 
       <div className="buttons">
         <div id="social-container">
-          <a href="" className="button">
+          <a
+            href={
+              "https://twitter.com/intent/tweet?hashtags=quote&text=" +
+              encodeURIComponent(quote + " - " + author)
+            }
+            className="button"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaTwitter id="tweet-quote" size={20} />
-          </a>
-          <a href="" className="button">
-            <FaFacebook id="fb-quote" size={20} />
-          </a>
-          <a href="" className="button">
-            <FaLinkedin id="li-quote" size={20} />
           </a>
         </div>
 
@@ -74,9 +84,7 @@ const QuoteBox = () => {
             className="button"
             id="new-quote"
             onClick={() => {
-              let quoteData = getQuote();
-              setQuote(quoteData["quote"]);
-              setAuthor(quoteData["author"]);
+              getQuote();
               setFade(1);
             }}
           >
