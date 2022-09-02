@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/QuoteBox.scss";
-import { FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 
 const QuoteBox = () => {
   const [quote, setQuote] = useState("");
@@ -44,6 +44,7 @@ const QuoteBox = () => {
       setFade(1);
       getQuote();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quotes]);
 
   return (
