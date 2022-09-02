@@ -11,6 +11,28 @@
   cursor: pointer;
 }
 
+.alert-shown {
+  color: white;
+  text-align: center;
+  opacity: 1;
+  transition: all 400ms linear;
+  padding-bottom: 1rem;
+}
+
+.alert-hidden {
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: all 400ms linear 1s;
+  padding-bottom: 1rem;
+}
+
+#alert {
+  background: rgba(193, 193, 193, 0.3);
+  border-radius: 3px;
+  padding: 2px 7px;
+}
+
 #text {
   color: #2a9d8f;
   font-size: 1.5rem;

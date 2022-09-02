@@ -7,6 +7,7 @@ const QuoteBox = () => {
   const [author, setAuthor] = useState("");
   const [quotes, setQuotes] = useState([]);
   const [fade, setFade] = useState(0);
+  const [displayAlert, setDisplayAlert] = useState(0);
 
   const getRandomNumber = () => {
     const quotesSize = quotes.length;
@@ -51,11 +52,18 @@ const QuoteBox = () => {
         className="quote-container"
         onClick={() => {
           navigator.clipboard.writeText(quote);
+          setDisplayAlert(1);
         }}
       >
         <p id="text" onAnimationEnd={() => setFade(0)} fade={fade}>
           {quote ? '"' + quote + '"' : ""}
         </p>
+        <div
+          className={displayAlert === 1 ? "alert-shown" : "alert-hidden"}
+          onTransitionEnd={() => setDisplayAlert(0)}
+        >
+          <span id="alert">quote copied</span>
+        </div>
       </div>
 
       <div className="author-container">
