@@ -1,6 +1,6 @@
 import Footer from "./components/Footer";
 import QuoteBox from "./components/QuoteBox";
-import "./styles/App.css";
+import "./styles/App.scss";
 
 function App() {
   return (

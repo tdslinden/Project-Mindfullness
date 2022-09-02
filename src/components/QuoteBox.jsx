@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/QuoteBox.css";
+import "../styles/QuoteBox.scss";
 import { FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
 
 const QuoteBox = () => {
