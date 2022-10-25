@@ -1,3 +1,13 @@
+@media only screen and (min-width: 450px) {
+  #icon {
+    margin-right: 4px;
+    padding: 1.25rem 1.125rem;
+    font-size: 1.25rem;
+    color: rgba($color: #ffffff, $alpha: 0.6);
+  }
+}
+
+
 .footer {
   position: fixed;
   left: 0;
@@ -17,8 +27,8 @@
 
 #icon {
   margin-right: 4px;
-  padding: 1.25rem 1.125rem;
-  font-size: 1.25rem;
+  padding: 1.125rem 1rem;
+  font-size: 1.125rem;
   color: rgba($color: #ffffff, $alpha: 0.6);
 }
 
